@@ -7,8 +7,8 @@ import java.net.Socket;
 
 // To recompile files and run server:
 // javac src/*.java && java -cp src OutServer
+
 public class OutServer {
-    
     public static void main(String[] args) {
         try {
             writeToSocket(12345);
@@ -17,12 +17,10 @@ public class OutServer {
             System.err.println(e.getMessage());
             System.exit(1);
         }
-        
     }
 
     public static void writeToSocket(int port) throws IOException {
         ServerSocket server = new ServerSocket(port);
-
         System.out.println("waiting for client to connect...");
         Socket socket = server.accept();
         System.out.println("Client connected!");
